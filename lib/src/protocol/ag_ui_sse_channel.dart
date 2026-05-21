@@ -75,6 +75,7 @@ class AgUiSseChannel<T> {
   DateTime? _lastActivityAt;
   Duration _serverRetryDelay = _defaultRetryDelay;
   int _reconnectAttempts = 0;
+  DateTime? _connectedAt;
   final math.Random _random = math.Random();
   bool _started = false;
   bool _disposed = false;
@@ -113,7 +114,7 @@ class AgUiSseChannel<T> {
       );
       if (_disposed || (_cancelToken?.isCancelled ?? false)) return;
 
-      _reconnectAttempts = 0;
+      _connectedAt = DateTime.now();
       connectedNotifier.value = true;
       _recordActivity();
       _startWatchdog();
@@ -199,6 +200,15 @@ class AgUiSseChannel<T> {
   }
 
   Duration _computeReconnectDelay() {
+    // Reset backoff only if the connection was stable long enough.
+    // Transient connections (e.g. immediate disconnect) keep the counter growing.
+    const _stableThreshold = Duration(seconds: 30);
+    if (_connectedAt != null &&
+        DateTime.now().difference(_connectedAt!) >= _stableThreshold) {
+      _reconnectAttempts = 0;
+    }
+    _connectedAt = null;
+
     final baseMs = _serverRetryDelay.inMilliseconds;
     final cappedMs = math.min(
       baseMs * (1 << math.min(_reconnectAttempts, 5)),
