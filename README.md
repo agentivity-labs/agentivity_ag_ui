@@ -200,7 +200,7 @@ _gen       = AgUiGenerativeController(events: broadcast);
 
 ### Agentivity
 
-`AgentivityConnector` targets the [Agentivity](https://agentivity.com) platform. Run a single agent, an entire agent team, resume after an interrupt, or cancel:
+`AgentivityConnector` targets the [Agentivity](https://agentivity.io) platform. Run a single agent, an entire agent team, resume after an interrupt, or cancel:
 
 ```dart
 final connector = AgentivityConnector(
@@ -332,7 +332,7 @@ MaterialApp(
 
 Issues and PRs are welcome. For major changes, open an issue first to align on direction.
 
-Built and maintained by [Agentivity](https://agentivity.com) — the platform for AI agent orchestration and monitoring.
+Built and maintained by [Agentivity](https://agentivity.io) — the platform for AI agent orchestration and monitoring.
 
 ---
 
