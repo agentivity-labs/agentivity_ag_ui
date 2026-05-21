@@ -12,11 +12,11 @@ Ship real-time AI chat, human-in-the-loop approvals, generative UI, and agent mo
 <br>
 
 <p align="center">
-  <img src="docs/screenshots/travel_dark.png"    width="30%" alt="AI Trip Planner — generative flight & hotel cards"/>
+  <img src="https://raw.githubusercontent.com/agentivity-labs/agentivity_ag_ui/master/docs/screenshots/travel_dark.png"    width="30%" alt="AI Trip Planner — generative flight &amp; hotel cards"/>
   &nbsp;&nbsp;
-  <img src="docs/screenshots/support_light.png"  width="30%" alt="AI Customer Support — ticket tracking + escalation HIL"/>
+  <img src="https://raw.githubusercontent.com/agentivity-labs/agentivity_ag_ui/master/docs/screenshots/support_light.png"  width="30%" alt="AI Customer Support — ticket tracking + escalation HIL"/>
   &nbsp;&nbsp;
-  <img src="docs/screenshots/widgets_light.png"  width="30%" alt="Generic Agentivity client — widget vocabulary"/>
+  <img src="https://raw.githubusercontent.com/agentivity-labs/agentivity_ag_ui/master/docs/screenshots/widgets_light.png"  width="30%" alt="Generic Agentivity client — widget vocabulary"/>
 </p>
 
 <p align="center">
