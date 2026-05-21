@@ -34,3 +34,4 @@ jobs:
       # Repository: agentivity-labs/agentivity_ag_ui  |  Tag pattern: v{{version}}
       - name: Publish
         run: dart pub publish --force
+        

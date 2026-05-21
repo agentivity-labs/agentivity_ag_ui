@@ -2,9 +2,9 @@ name: CI
 
 on:
   push:
-    branches: [main, develop]
+    branches: [main, master, develop]
   pull_request:
-    branches: [main]
+    branches: [main, master]
 
 jobs:
   analyze-and-test:
@@ -36,3 +36,4 @@ jobs:
         with:
           file: coverage/lcov.info
         continue-on-error: true   # don't fail if Codecov isn't configured
+        
