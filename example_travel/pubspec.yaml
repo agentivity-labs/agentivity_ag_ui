@@ -1,0 +1,17 @@
+name: example_travel
+description: AI Trip Planner — agentivity_ag_ui marketing demo
+publish_to: 'none'
+version: 1.0.0
+
+environment:
+  sdk: ">=3.2.0 <4.0.0"
+  flutter: ">=3.19.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  agentivity_ag_ui:
+    path: ../
+
+flutter:
+  uses-material-design: true

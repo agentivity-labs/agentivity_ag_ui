@@ -1,0 +1,22 @@
+name: example_agentivity
+description: >-
+  Generic Agentivity client — connect to any agent or team and interact
+  through a reusable widget vocabulary (choice, date, slider, text, confirm…).
+publish_to: 'none'
+version: 1.0.0
+
+environment:
+  sdk: ">=3.2.0 <4.0.0"
+  flutter: ">=3.19.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  agentivity_ag_ui:
+    path: ../
+  flutter_svg: ^2.0.10+1
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 511.99998 511.99998"
+   width="512"
+   height="512"
+   role="img"
+   version="1.1"
+   id="svg12"
+   sodipodi:docname="agentivity_icon_blue.svg"
+   inkscape:version="1.4.2 (f4327f4, 2025-05-13)"
+   inkscape:export-filename="agentivity_icon_blue.png"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <defs
+     id="defs12" />
+  <sodipodi:namedview
+     id="namedview12"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="1.7852941"
+     inkscape:cx="56.293246"
+     inkscape:cy="82.619441"
+     inkscape:window-width="5160"
+     inkscape:window-height="2054"
+     inkscape:window-x="-11"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg12" />
+  <title
+     id="title1">agentivity.io</title>
+  <desc
+     id="desc1">Agentivity logo</desc>
+  <!-- Trefoil dots above 'a' — equilateral triangle, apex up -->
+  <!-- Outlined glyphs (Poppins Medium, no font dependency) -->
+  <g
+     id="g1"
+     transform="matrix(5.5373738,0,0,5.5373738,-25.960025,-107.5377)">
+    <g
+       id="g12"
+       transform="translate(-47.772652,-50.971992)"
+       style="fill:#152844;fill-opacity:1">
+      <circle
+         cx="97.805"
+         cy="77.080002"
+         r="5"
+         fill="#ffffff"
+         id="circle1"
+         style="fill:#152844;fill-opacity:1" />
+      <circle
+         cx="91.555"
+         cy="89.580002"
+         r="5"
+         fill="#ffffff"
+         id="circle2"
+         style="fill:#152844;fill-opacity:1" />
+      <circle
+         cx="104.055"
+         cy="89.580002"
+         r="5"
+         fill="#ffffff"
+         id="circle3"
+         style="fill:#152844;fill-opacity:1" />
+    </g>
+    <path
+       id="path3"
+       d="m 47.723438,49.108088 c -5.135996,0 -9.824356,1.26616 -14.068356,3.79883 -4.244666,2.532 -7.597927,6.08115 -10.058593,10.64648 -1.807566,3.35271 -2.951524,7.07063 -3.431641,11.1543 h 12.654297 c 0.401165,-2.18968 1.107077,-4.17814 2.119141,-5.96485 1.676,-2.96066 3.869411,-5.2069 6.580078,-6.74023 2.710666,-1.534 5.634774,-2.30078 8.773434,-2.30078 3.13867,0 6.06473,0.78418 8.77539,2.35351 2.71067,1.56934 4.90342,3.85166 6.58008,6.84766 1.676,2.996 2.51367,6.52775 2.51367,10.59375 0,4.066 -0.83767,7.61448 -2.51367,10.64648 -1.67666,3.03134 -3.86941,5.33106 -6.58008,6.90039 -2.71066,1.56934 -5.63672,2.35352 -8.77539,2.35352 -3.06733,0 -5.972747,-0.80158 -8.718747,-2.40625 -2.746667,-1.60533 -4.958765,-3.94243 -6.634765,-7.00977 -0.926026,-1.69409 -1.597139,-3.54034 -2.011719,-5.53906 H 20.237114 c 0.516924,3.88196 1.636552,7.45833 3.359375,10.72852 2.460666,4.67266 5.795239,8.312012 10.003906,10.916012 4.208667,2.60334 8.845489,3.9043 13.910153,3.9043 4.56534,0 8.6306,-0.92658 12.19727,-2.78125 3.56667,-1.85467 6.38446,-4.17308 8.45312,-6.95508 v 8.77344 h 12.30469 V 50.070978 h -12.30469 v 8.56055 c -2.06866,-2.71067 -4.83168,-4.97626 -8.29101,-6.79493 -3.46,-1.81933 -7.50982,-2.72851 -12.14649,-2.72851 z"
+       style="fill:#152844;fill-opacity:1" />
+  </g>
+  <metadata
+     id="metadata1">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title>agentivity.io</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>
