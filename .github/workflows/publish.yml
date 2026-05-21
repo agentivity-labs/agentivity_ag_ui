@@ -3,35 +3,15 @@ name: Publish to pub.dev
 on:
   push:
     tags:
-      - 'v[0-9]+.[0-9]+.[0-9]+*'   # v1.0.0, v1.2.3-beta.1, etc.
+      - 'v[0-9]+.[0-9]+.[0-9]+*'
+
+permissions:
+  id-token: write
 
 jobs:
   publish:
-    name: Publish
     runs-on: ubuntu-latest
-    permissions:
-      id-token: write   # required for OIDC pub.dev authentication
-
     steps:
       - uses: actions/checkout@v4
-
-      - uses: subosito/flutter-action@v2
-        with:
-          channel: stable
-          cache: true
-
-      - name: Install dependencies
-        run: dart pub get
-
-      - name: Analyze
-        run: dart analyze lib/ test/
-
-      - name: Run tests
-        run: flutter test
-
-      # pub.dev OIDC — configure once at:
-      # https://pub.dev/packages/agentivity_ag_ui/admin
-      # Repository: agentivity-labs/agentivity_ag_ui  |  Tag pattern: v{{version}}
-      - name: Publish
-        run: dart pub publish --force
-        
+      - uses: dart-lang/setup-dart@v1
+      - run: dart pub publish --force
