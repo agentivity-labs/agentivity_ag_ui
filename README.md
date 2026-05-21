@@ -31,7 +31,7 @@ Ship real-time AI chat, human-in-the-loop approvals, generative UI, and agent mo
 
 ## What is AG-UI?
 
-[AG-UI](https://github.com/ag-ui-protocol/ag-ui) is an open, lightweight, event-based protocol that standardizes how AI agents connect to user-facing applications. Think of it as the missing link between your AI backend (LangGraph, CrewAI, Claude, GPT-4…) and your frontend — a universal contract for streaming tokens, tool calls, state updates, and human-in-the-loop interactions.
+[AG-UI](https://github.com/ag-ui-protocol/ag-ui) is an open, lightweight, event-based protocol that standardizes how AI agents connect to user-facing applications. Think of it as the missing link between your AI backend (LangGraph, Agentivity.io, CrewAI, Claude, GPT-4…) and your frontend — a universal contract for streaming tokens, tool calls, state updates, and human-in-the-loop interactions.
 
 AG-UI sits alongside MCP (agent ↔ tools) and A2A (agent ↔ agent): it handles the third piece — **agent ↔ user**.
 
