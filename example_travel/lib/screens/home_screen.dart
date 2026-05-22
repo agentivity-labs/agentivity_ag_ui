@@ -566,9 +566,9 @@ class _BookingSheet extends StatelessWidget {
           const SizedBox(height: 24),
 
           // Flight summary
-          _SummaryTile(
+          const _SummaryTile(
             icon: Icons.flight_rounded,
-            iconColor: const Color(0xFF00B4D8),
+            iconColor: Color(0xFF00B4D8),
             title: 'Vueling VY 1234',
             subtitle: 'CDG → BCN  |  08:30 – 10:45  |  Economy Plus',
             price: '€189',
@@ -576,9 +576,9 @@ class _BookingSheet extends StatelessWidget {
           const SizedBox(height: 10),
 
           // Hotel summary
-          _SummaryTile(
+          const _SummaryTile(
             icon: Icons.hotel_rounded,
-            iconColor: const Color(0xFF48CAE4),
+            iconColor: Color(0xFF48CAE4),
             title: 'Hotel Arts Barcelona',
             subtitle: 'Barceloneta  |  3 nights  |  Pool & sea view',
             price: '€960',

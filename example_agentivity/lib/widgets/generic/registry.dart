@@ -42,30 +42,30 @@ AgUiWidgetRegistry buildGenericRegistry({
       onSubmit,
 }) {
   return AgUiWidgetRegistry({
-    'ChoiceWidget': (props) => AgChoiceWidget(
+    'ChoiceWidget': (_, props) => AgChoiceWidget(
           props: props,
           onSubmit: (r) => onSubmit('ChoiceWidget', r),
         ),
-    'TextInputWidget': (props) => AgTextInputWidget(
+    'TextInputWidget': (_, props) => AgTextInputWidget(
           props: props,
           onSubmit: (r) => onSubmit('TextInputWidget', r),
         ),
-    'DateWidget': (props) => AgDateWidget(
+    'DateWidget': (_, props) => AgDateWidget(
           props: props,
           onSubmit: (r) => onSubmit('DateWidget', r),
         ),
-    'SliderWidget': (props) => AgSliderWidget(
+    'SliderWidget': (_, props) => AgSliderWidget(
           props: props,
           onSubmit: (r) => onSubmit('SliderWidget', r),
         ),
-    'ConfirmWidget': (props) => AgConfirmWidget(
+    'ConfirmWidget': (_, props) => AgConfirmWidget(
           props: props,
           onSubmit: (r) => onSubmit('ConfirmWidget', r),
         ),
-    'TagWidget': (props) => AgTagWidget(
+    'TagWidget': (_, props) => AgTagWidget(
           props: props,
           onSubmit: (r) => onSubmit('TagWidget', r),
         ),
-    'InfoCard': (props) => AgInfoCard(props: props),
+    'InfoCard': (_, props) => AgInfoCard(props: props),
   });
 }

@@ -210,9 +210,9 @@ class _AddToCartButtonState extends State<_AddToCartButton>
               ),
             ],
           ),
-          child: Row(
+          child: const Row(
             mainAxisSize: MainAxisSize.min,
-            children: const [
+            children: [
               Icon(Icons.add_shopping_cart, size: 18, color: Color(0xFF1a1a2e)),
               SizedBox(width: 6),
               Text('Add to cart',

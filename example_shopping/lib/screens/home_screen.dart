@@ -456,12 +456,12 @@ class _PickPromptBanner extends StatelessWidget {
             ),
           ],
         ),
-        child: Row(
+        child: const Row(
           children: [
-            const Icon(Icons.touch_app_outlined,
+            Icon(Icons.touch_app_outlined,
                 color: Colors.white, size: 20),
-            const SizedBox(width: 10),
-            const Expanded(
+            SizedBox(width: 10),
+            Expanded(
               child: Text(
                 'Tap to choose your product',
                 style: TextStyle(
@@ -470,7 +470,7 @@ class _PickPromptBanner extends StatelessWidget {
                     fontSize: 14),
               ),
             ),
-            const Icon(Icons.arrow_forward_ios,
+            Icon(Icons.arrow_forward_ios,
                 color: Colors.white70, size: 14),
           ],
         ),

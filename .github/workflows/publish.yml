@@ -7,6 +7,40 @@ on:
 
 jobs:
   publish:
+    runs-on: ubuntu-latest
+
     permissions:
-      id-token: write # Required for authentication using OIDC
-    uses: dart-lang/setup-dart/.github/workflows/publish.yml@v1
+      id-token: write
+      contents: read
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      - name: Install dependencies
+        run: dart pub get
+
+      - name: Validate version matches tag
+        run: |
+          VERSION=$(grep '^version:' pubspec.yaml | sed 's/version: //')
+          TAG="${GITHUB_REF_NAME}"
+
+          echo "pubspec version : $VERSION"
+          echo "Git tag         : $TAG"
+
+          if [ "v${VERSION}" != "${TAG}" ]; then
+            echo "ERROR: version mismatch"
+            exit 1
+          fi
+
+      - name: Dry run
+        run: dart pub publish --dry-run
+
+      - name: Publish
+        run: dart pub publish --force
+        env:
+          PUB_ENVIRONMENT: github-actions
