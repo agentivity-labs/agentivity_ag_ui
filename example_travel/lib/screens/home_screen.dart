@@ -42,7 +42,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   // ── Widget registry ──────────────────────────────────────────────────────────
   late final AgUiWidgetRegistry _registry = AgUiWidgetRegistry({
-    'FlightCard': (props) {
+    'FlightCard': (_, props) {
       final id = jsonStr(props, 'id');
       final flight = flightById(id);
       if (flight == null) {
@@ -54,7 +54,7 @@ class _HomeScreenState extends State<HomeScreen> {
       }
       return TravelFlightCard(flight: flight);
     },
-    'HotelCard': (props) {
+    'HotelCard': (_, props) {
       final id = jsonStr(props, 'id');
       final hotel = hotelById(id);
       if (hotel == null) {

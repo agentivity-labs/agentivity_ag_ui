@@ -45,7 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
   // ── Widget registry ──────────────────────────────────────────────────────────
   // Built lazily so it can close over _onAddToCart
   late final AgUiWidgetRegistry _registry = AgUiWidgetRegistry({
-    'ProductCard': (props) {
+    'ProductCard': (_, props) {
       final id = jsonStr(props, 'id');
       final product = productById(id);
       if (product == null) {
