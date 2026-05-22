@@ -11,6 +11,14 @@ Ship real-time AI chat, human-in-the-loop approvals, generative UI, and agent mo
 
 **[🛍️ Shopping demo](https://labs.agentivity.io/agentivity_ag_ui/example_shopping/) &nbsp;·&nbsp; [🤖 Agentivity client](https://labs.agentivity.io/agentivity_ag_ui/example_agentivity/) &nbsp;·&nbsp; [📖 Step-by-step](https://labs.agentivity.io/agentivity_ag_ui/example/)**
 
+---
+
+## The problem
+
+Most Flutter apps that integrate AI today display agent responses as raw text in a chat bubble. But agents can reason about *what* to show — a revenue chart, a live metric grid, a syntax-highlighted code block, a LaTeX formula. The missing piece is a standard way for the agent to say *"render this widget with this data"* — and for Flutter to actually do it.
+
+That is what this package solves. It implements the AG-UI open protocol: a lightweight event-based standard that lets your AI backend stream tokens, trigger tool calls, update shared state, and — most importantly — tell Flutter exactly which component to render at runtime. Your UI stays thin and declarative; the intelligence lives in the agent.
+
 <br>
 
 <p align="center">
