@@ -152,7 +152,7 @@ cd example_shopping && flutter run
 ```yaml
 # pubspec.yaml
 dependencies:
-  agentivity_ag_ui: ^0.3.5
+  agentivity_ag_ui: ^0.3.6
   dio: ^5.5.0
 ```
 
