@@ -38,7 +38,8 @@ jobs:
           fi
 
       - name: Dry run
-        run: dart pub publish --dry-run
+        # Exit 65 = warnings only (publishable with --force); exit 1 = real errors.
+        run: dart pub publish --dry-run; CODE=$?; [ $CODE -eq 0 ] || [ $CODE -eq 65 ]
 
       - name: Publish
         run: dart pub publish --force

@@ -69,7 +69,7 @@ jobs:
       - name: Assemble site
         run: |
           mkdir -p _site
-          cp docs/index.html              _site/index.html
+          cp doc/index.html               _site/index.html
           # CNAME is handled by the agentivity-labs.github.io org hub repo
           cp -r example/build/web          _site/example
           cp -r example_shopping/build/web _site/example_shopping

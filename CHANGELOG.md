@@ -1,5 +1,30 @@
 # Changelog
 
+## 0.3.5
+
+**Fix builder signature in examples; publish pipeline hardening.**
+
+- Fixed `(props) =>` → `(_, props) =>` builder signatures in `example_agentivity`, `example_shopping`, `example_travel` to match `AgUiComponentBuilder` v0.3.x API.
+- Added `dev_dependencies` (`flutter_test`, `flutter_lints`) to all example packages.
+- Renamed top-level `docs/` → `doc/` to follow pub.dev layout conventions.
+- CI: replaced reusable `dart-lang/setup-dart` publish workflow with an explicit pipeline including version/tag validation and `PUB_ENVIRONMENT: github-actions` for OIDC.
+
+---
+
+## 0.3.0
+
+**Breaking: `AgUiComponentBuilder` now receives `BuildContext`.**
+
+- `AgUiComponentBuilder` signature changed from `Widget Function(Map<String, dynamic>)` to `Widget Function(BuildContext, Map<String, dynamic>)`.
+  Migration: add `_` (or `context`) as first parameter to all builder lambdas.
+- `AgUiWidgetRegistry` updated accordingly.
+- Added `AgUiChatTheme`, `AgUiHilTheme`, `AgUiAssistantTheme` theme extensions.
+- Chat controller: `loadThreads`, `setSearchQuery`, `openThread`, `sendMessage`, `clearError`.
+- HIL controller: `loadPending`, `submitResponse`.
+- 187 unit tests passing.
+
+---
+
 ## 0.2.0
 
 **Generative UI, protocol alignment, state sync, and frontend tools.**
