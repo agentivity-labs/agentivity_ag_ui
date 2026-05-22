@@ -3,6 +3,7 @@
 [![pub.dev](https://img.shields.io/pub/v/agentivity_ag_ui.svg)](https://pub.dev/packages/agentivity_ag_ui)
 [![CI](https://github.com/agentivity-labs/agentivity_ag_ui/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/agentivity-labs/agentivity_ag_ui/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Live demos](https://img.shields.io/badge/Live%20demos-labs.agentivity.io-6366f1)](https://labs.agentivity.io/agentivity_ag_ui/)
 
 **The Flutter SDK for building AI agent interfaces — powered by the [AG-UI open protocol](https://github.com/ag-ui-protocol/ag-ui).**
 
@@ -151,7 +152,7 @@ cd example_shopping && flutter run
 ```yaml
 # pubspec.yaml
 dependencies:
-  agentivity_ag_ui: ^0.2.0
+  agentivity_ag_ui: ^0.3.5
   dio: ^5.5.0
 ```
 
@@ -327,6 +328,28 @@ MaterialApp(
 | [AG-UI Protocol](https://github.com/ag-ui-protocol/ag-ui) | Event contract between agent and UI |
 | [RFC 8895](https://www.rfc-editor.org/rfc/rfc8895) | Server-Sent Events framing |
 | [RFC 6902](https://www.rfc-editor.org/rfc/rfc6902) | JSON Patch for state delta updates |
+
+---
+
+## Agentivity Labs
+
+**[labs.agentivity.io](https://labs.agentivity.io)** is our open research and engineering lab — where we explore what it means to build production-grade interfaces for AI agents.
+
+Our mission is to make agentic AI accessible to everyone — from individuals exploring what agents can do, to teams running complex workflows, to large organisations embedding agents into their core operations. Not just accessible to engineers: accessible to anyone who wants to work alongside AI agents, understand what they are doing, and stay in control.
+
+We believe the bottleneck is not model capability — it is the lack of a mature ecosystem around it. Agentivity's core product is a visual platform for designing, composing, and operating agentic systems: teams of agents that are modifiable, reusable, and deployable at any scale. The open-source work published here is part of that ecosystem — the building blocks we open up so the broader community can build on the same foundation.
+
+We are early. But the direction is clear: agentic AI needs the kind of infrastructure, standardisation, and accessibility that enterprise software has had for decades. That is what we are building toward.
+
+**What we publish:**
+
+- **Open-source libraries** — Flutter SDKs, protocol implementations, and UI toolkits for agentic applications. This package is one; [`agentivity_artifacts`](https://pub.dev/packages/agentivity_artifacts) is another.
+- **Live demos** — fully working, themed examples you can browse directly in your browser, built on the same packages you install from pub.dev.
+- **Technical articles** — walkthroughs, architecture decisions, and patterns we encounter building real agentic products.
+
+**Our mission:** make it straightforward for any Flutter developer to ship a production-quality AI agent interface — without needing to understand SSE framing, JSON Patch, or interrupt protocols from scratch.
+
+We're not a research lab with a large team and a publication budget. We're practitioners, and we open-source the infrastructure we wish had existed when we started.
 
 ---
 
