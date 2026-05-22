@@ -5,7 +5,7 @@
   "packages": [
     {
       "name": "agentivity_ag_ui",
-      "version": "0.2.0",
+      "version": "0.2.4",
       "dependencies": [
         "dio",
         "flutter",

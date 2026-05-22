@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>agentivity_ag_ui — Live Demos</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #0f1117;
+      color: #e2e8f0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 48px 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 48px;
+    }
+
+    header h1 {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      color: #fff;
+    }
+
+    header p {
+      margin-top: 8px;
+      font-size: 13px;
+      color: #94a3b8;
+    }
+
+    header a {
+      color: #60a5fa;
+      text-decoration: none;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+      width: 100%;
+      max-width: 860px;
+    }
+
+    .card {
+      background: #1e2330;
+      border: 1px solid #2d3448;
+      border-radius: 8px;
+      padding: 24px;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.15s, background 0.15s;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .card:hover {
+      border-color: #3b82f6;
+      background: #232a3e;
+    }
+
+    .card-icon {
+      font-size: 24px;
+    }
+
+    .card-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .card-desc {
+      font-size: 12px;
+      color: #94a3b8;
+      line-height: 1.6;
+    }
+
+    .card-tag {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 600;
+      background: #3b82f620;
+      color: #60a5fa;
+      border: 1px solid #3b82f640;
+      border-radius: 3px;
+      padding: 2px 7px;
+      align-self: flex-start;
+    }
+
+    footer {
+      margin-top: 48px;
+      font-size: 11px;
+      color: #475569;
+      text-align: center;
+    }
+
+    footer a { color: #60a5fa; text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>agentivity_ag_ui — Live Demos</h1>
+  <p>
+    Flutter SDK for AG-UI agent interfaces &nbsp;·&nbsp;
+    <a href="https://pub.dev/packages/agentivity_ag_ui">pub.dev</a> &nbsp;·&nbsp;
+    <a href="https://github.com/agentivity-labs/agentivity_ag_ui">GitHub</a>
+  </p>
+</header>
+
+<div class="grid">
+
+  <a class="card" href="/agentivity_ag_ui/example_shopping/">
+    <span class="card-icon">🛍️</span>
+    <span class="card-title">AI Shopping Assistant</span>
+    <p class="card-desc">
+      Full AG-UI demo — reasoning block, tool calls, streaming text,
+      generative product cards, state-driven cart bar, HIL interrupt &amp; resume.
+    </p>
+    <span class="card-tag">No API key needed</span>
+  </a>
+
+  <a class="card" href="/agentivity_ag_ui/example_agentivity/">
+    <span class="card-icon">🤖</span>
+    <span class="card-title">Agentivity Client</span>
+    <p class="card-desc">
+      Connect to a live Agentivity agent or team, or run the offline widget
+      demo — 7 reusable agent-driven widgets (choice, input, date, slider…).
+    </p>
+    <span class="card-tag">Demo mode offline</span>
+  </a>
+
+  <a class="card" href="/agentivity_ag_ui/example/">
+    <span class="card-icon">📖</span>
+    <span class="card-title">Step-by-step Examples</span>
+    <p class="card-desc">
+      9 self-contained screens — SSE connection, streaming text, tool calls,
+      generative UI, reasoning, state sync, HIL forms, interrupts, full stack.
+    </p>
+    <span class="card-tag">9 concepts · offline</span>
+  </a>
+
+</div>
+
+<footer>
+  Built with <a href="https://github.com/ag-ui-protocol/ag-ui">AG-UI protocol</a>
+  &nbsp;·&nbsp;
+  <a href="https://agentivity.io">agentivity.io</a>
+</footer>
+
+</body>
+</html>

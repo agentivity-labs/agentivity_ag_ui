@@ -1,6 +1,5 @@
 # agentivity_ag_ui
 
-<!-- pub.dev badge appears once the package is published -->
 [![pub.dev](https://img.shields.io/pub/v/agentivity_ag_ui.svg)](https://pub.dev/packages/agentivity_ag_ui)
 [![CI](https://github.com/agentivity-labs/agentivity_ag_ui/actions/workflows/ci.yml/badge.svg?branch=master)](https://github.com/agentivity-labs/agentivity_ag_ui/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
@@ -8,6 +7,8 @@
 **The Flutter SDK for building AI agent interfaces — powered by the [AG-UI open protocol](https://github.com/ag-ui-protocol/ag-ui).**
 
 Ship real-time AI chat, human-in-the-loop approvals, generative UI, and agent monitoring in your Flutter app — in minutes, not weeks.
+
+**[🛍️ Shopping demo](https://labs.agentivity.io/agentivity_ag_ui/example_shopping/) &nbsp;·&nbsp; [🤖 Agentivity client](https://labs.agentivity.io/agentivity_ag_ui/example_agentivity/) &nbsp;·&nbsp; [📖 Step-by-step](https://labs.agentivity.io/agentivity_ag_ui/example/)**
 
 <br>
 

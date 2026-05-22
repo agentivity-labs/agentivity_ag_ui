@@ -4,7 +4,7 @@ description: >-
   HIL forms, AI assistant, and agent run monitor. Bring your own backend.
 version: 0.2.4
 repository: https://github.com/agentivity/agentivity_ag_ui
-homepage: https://agentivity.io
+homepage: https://agentivity-labs.github.io/agentivity_ag_ui/
 issue_tracker: https://github.com/agentivity/agentivity_ag_ui/issues
 
 environment:
