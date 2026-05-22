@@ -39,7 +39,11 @@ class AgUiGenerativeView extends StatelessWidget {
   final Widget Function(AgUiToolCallItem item)? toolCallBuilder;
 
   /// Called when a component name is not in [registry].
-  final Widget Function(String component, Map<String, dynamic> props)? fallbackBuilder;
+  final Widget Function(
+    BuildContext context,
+    String component,
+    Map<String, dynamic> props,
+  )? fallbackBuilder;
 
   /// Renders agent-generated HTML ([AgUiHtmlItem]).
   ///
@@ -93,9 +97,9 @@ class AgUiGenerativeView extends StatelessWidget {
   }
 
   Widget _buildComponent(BuildContext context, AgUiComponentItem item) {
-    final widget = registry.build(item.component, item.props);
+    final widget = registry.build(context, item.component, item.props);
     if (widget != null) return widget;
-    return fallbackBuilder?.call(item.component, item.props) ??
+    return fallbackBuilder?.call(context, item.component, item.props) ??
         _UnknownComponent(name: item.component);
   }
 }

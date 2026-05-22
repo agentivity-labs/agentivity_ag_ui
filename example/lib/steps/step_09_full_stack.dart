@@ -29,7 +29,7 @@ class _State extends State<Step09FullStack> {
   bool _running = false;
 
   final _registry = AgUiWidgetRegistry({
-    'ProductCard': (props) => _ProductCard(
+    'ProductCard': (_, props) => _ProductCard(
           name: jsonStr(props, 'name'),
           price: jsonStr(props, 'price'),
           emoji: jsonStr(props, 'emoji'),

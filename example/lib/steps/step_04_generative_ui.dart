@@ -24,14 +24,14 @@ class _State extends State<Step04GenerativeUi> {
   // ── Widget registry ─────────────────────────────────────────────────────────
   final _registry = AgUiWidgetRegistry({
     // Tool name "WeatherCard" maps directly to a Flutter widget.
-    'WeatherCard': (props) => _WeatherCard(
+    'WeatherCard': (_, props) => _WeatherCard(
           city: jsonStr(props, 'city'),
           tempC: (jsonInt(props, 'tempC') ?? 0).toDouble(),
           condition: jsonStr(props, 'condition'),
           icon: _weatherIcon(jsonOpt(props, 'condition')),
         ),
     // A CUSTOM render event with component="StockTicker" lands here too.
-    'StockTicker': (props) => _StockTicker(
+    'StockTicker': (_, props) => _StockTicker(
           ticker: jsonStr(props, 'ticker'),
           price: jsonStr(props, 'price'),
           change: jsonStr(props, 'change'),
@@ -166,7 +166,7 @@ class _State extends State<Step04GenerativeUi> {
                 : AgUiGenerativeView(
                     controller: _ctrl!,
                     registry: _registry,
-                    fallbackBuilder: (name, _) => Padding(
+                    fallbackBuilder: (_, name, __) => Padding(
                       padding: const EdgeInsets.all(8),
                       child: Text('Unknown: $name',
                           style: const TextStyle(color: Colors.red)),

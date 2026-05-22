@@ -247,7 +247,7 @@ void main() {
     test('tool matching registry replaces placeholder with AgUiComponentItem',
         () async {
       final registry = AgUiWidgetRegistry({
-        'WeatherCard': (_) => const SizedBox(),
+        'WeatherCard': (_, __) => const SizedBox(),
       });
       final ctrl = _ctrl(
         [
@@ -274,7 +274,7 @@ void main() {
     });
 
     test('unknown tool name stays as AgUiToolCallItem', () async {
-      final registry = AgUiWidgetRegistry({'Known': (_) => const SizedBox()});
+      final registry = AgUiWidgetRegistry({'Known': (_, __) => const SizedBox()});
       final ctrl = _ctrl(
         [
           _e({
