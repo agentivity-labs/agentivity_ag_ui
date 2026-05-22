@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.3.6
+
+**Clean versioning release — correct tag/pubspec alignment.**
+
+- Re-tagged release to ensure the published version on pub.dev matches the Git tag and pubspec version.
+- No functional changes since 0.3.5.
+
+---
+
 ## 0.3.5
 
 **Fix builder signature in examples; publish pipeline hardening.**
