@@ -3,6 +3,10 @@ library agentivity_ag_ui;
 // json helpers — for use in widget registry builders
 export 'src/shared/json_helpers.dart';
 
+// theme — unified design-token extensions
+export 'src/theme/ag_theme_data.dart';
+export 'src/theme/ag_accent_colors.dart';
+
 // protocol
 export 'src/protocol/ag_ui_sse_channel.dart';
 export 'src/protocol/ag_ui_protocol.dart';

@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
+import '../../theme/ag_theme_data.dart';
 import '../../widgets/ag_ui_markdown_body.dart';
 import 'chat_controller.dart';
 import 'chat_models.dart';
-import 'chat_theme.dart';
 
 /// A self-contained chat panel backed by a [ChatController].
 ///
-/// Styling: add [AgUiChatTheme] to your [ThemeData.extensions], or pass
+/// Styling: add [AgThemeData] to your [ThemeData.extensions], or pass
 /// [style] for a one-off override. Override individual parts with builders.
 class AgUiChatPanel extends StatefulWidget {
   const AgUiChatPanel({
@@ -29,8 +29,8 @@ class AgUiChatPanel extends StatefulWidget {
   /// The thread to display. Pass `null` to show the thread list instead.
   final String? threadId;
 
-  /// Visual overrides on top of [AgUiChatTheme].
-  final AgUiChatTheme? style;
+  /// Visual overrides on top of [AgThemeData].
+  final AgThemeData? style;
 
   /// Replace the default message bubble entirely.
   final Widget Function(ChatMessage message)? messageBuilder;
@@ -154,14 +154,16 @@ class _AgUiChatPanelState extends State<AgUiChatPanel> {
 
   @override
   Widget build(BuildContext context) {
-    final theme = AgUiChatTheme.of(context).copyWith(
-      userBubbleColor: widget.style?.userBubbleColor,
-      assistantBubbleColor: widget.style?.assistantBubbleColor,
-      systemBubbleColor: widget.style?.systemBubbleColor,
-      userTextStyle: widget.style?.userTextStyle,
-      assistantTextStyle: widget.style?.assistantTextStyle,
-      bubbleRadius: widget.style?.bubbleRadius,
-      sendIconColor: widget.style?.sendIconColor,
+    final s = widget.style;
+    final theme = AgThemeData.of(context).copyWith(
+      bubbleUserColor:      s?.bubbleUserColor,
+      bubbleAgentColor:     s?.bubbleAgentColor,
+      bubbleSystemColor:    s?.bubbleSystemColor,
+      bubbleUserTextStyle:  s?.bubbleUserTextStyle,
+      bubbleAgentTextStyle: s?.bubbleAgentTextStyle,
+      bubbleRadius:         s?.bubbleRadius,
+      inputDecoration:      s?.inputDecoration,
+      sendIconColor:        s?.sendIconColor,
     );
 
     if (_loadingMessages) {
@@ -214,7 +216,7 @@ class _MessageBubble extends StatelessWidget {
   const _MessageBubble({required this.message, required this.theme});
 
   final ChatMessage message;
-  final AgUiChatTheme theme;
+  final AgThemeData theme;
 
   @override
   Widget build(BuildContext context) {
@@ -223,15 +225,15 @@ class _MessageBubble extends StatelessWidget {
     final isSystem = message.role == ChatMessageRole.system;
 
     final Color bg = isUser
-        ? (theme.userBubbleColor ?? colorScheme.primaryContainer)
+        ? (theme.bubbleUserColor ?? colorScheme.primaryContainer)
         : isSystem
-            ? (theme.systemBubbleColor ?? colorScheme.surfaceContainerHighest)
-            : (theme.assistantBubbleColor ?? colorScheme.secondaryContainer);
+            ? (theme.bubbleSystemColor ?? colorScheme.surfaceContainerHighest)
+            : (theme.bubbleAgentColor ?? colorScheme.secondaryContainer);
 
     final TextStyle? textStyle =
-        isUser ? theme.userTextStyle : theme.assistantTextStyle;
+        isUser ? theme.bubbleUserTextStyle : theme.bubbleAgentTextStyle;
 
-    final radius = theme.bubbleRadius ?? BorderRadius.circular(12);
+    final radius = BorderRadius.circular(theme.bubbleRadius);
 
     final useMarkdown = !isUser && !isSystem && message.text.isNotEmpty;
     final textColor = textStyle?.color ?? Theme.of(context).colorScheme.onSurface;
@@ -239,8 +241,9 @@ class _MessageBubble extends StatelessWidget {
     return Align(
       alignment: isUser ? Alignment.centerRight : Alignment.centerLeft,
       child: Container(
-        margin: const EdgeInsets.symmetric(vertical: 4),
-        padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+        margin: EdgeInsets.symmetric(vertical: theme.gap4),
+        padding: EdgeInsets.symmetric(
+            horizontal: theme.bubblePaddingH, vertical: theme.bubblePaddingV),
         constraints: BoxConstraints(
             maxWidth: MediaQuery.of(context).size.width * 0.75),
         decoration: BoxDecoration(color: bg, borderRadius: radius),

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
+import '../../theme/ag_theme_data.dart';
 import 'form_controller.dart';
 import 'form_models.dart';
-import 'form_theme.dart';
 
 /// Renders a single [FormRequest] as an interactive form.
 ///
-/// Styling: add [AgUiFormTheme] to your [ThemeData.extensions].
+/// Styling: add [AgThemeData] to your [ThemeData.extensions].
 /// Override buttons or individual fields with builder callbacks.
 class AgUiFormPanel extends StatefulWidget {
   const AgUiFormPanel({
@@ -21,7 +21,9 @@ class AgUiFormPanel extends StatefulWidget {
 
   final FormRequest request;
   final FormController controller;
-  final AgUiFormTheme? style;
+
+  /// Visual overrides on top of [AgThemeData].
+  final AgThemeData? style;
 
   /// Override rendering of a single field.
   final Widget Function(AgFormField field, ValueChanged<dynamic> onChange)?
@@ -75,21 +77,22 @@ class _AgUiFormPanelState extends State<AgUiFormPanel> {
 
   @override
   Widget build(BuildContext context) {
-    final theme = AgUiFormTheme.of(context).copyWith(
-      cardColor: widget.style?.cardColor,
-      titleStyle: widget.style?.titleStyle,
-      descriptionStyle: widget.style?.descriptionStyle,
-      approveColor: widget.style?.approveColor,
-      rejectColor: widget.style?.rejectColor,
-      submitColor: widget.style?.submitColor,
-      fieldLabelStyle: widget.style?.fieldLabelStyle,
-      borderRadius: widget.style?.borderRadius,
+    final s = widget.style;
+    final theme = AgThemeData.of(context).copyWith(
+      formCardColor:        s?.formCardColor,
+      formTitleStyle:       s?.formTitleStyle,
+      formDescriptionStyle: s?.formDescriptionStyle,
+      formApproveColor:     s?.formApproveColor,
+      formRejectColor:      s?.formRejectColor,
+      formSubmitColor:      s?.formSubmitColor,
+      formFieldLabelStyle:  s?.formFieldLabelStyle,
+      formBorderRadius:     s?.formBorderRadius,
     );
     final colorScheme = Theme.of(context).colorScheme;
-    final radius = theme.borderRadius ?? BorderRadius.circular(12);
+    final radius = theme.formBorderRadius ?? BorderRadius.circular(theme.cardRadius);
 
     return Card(
-      color: theme.cardColor,
+      color: theme.formCardColor,
       shape: RoundedRectangleBorder(borderRadius: radius),
       child: Padding(
         padding: const EdgeInsets.all(16),
@@ -98,16 +101,16 @@ class _AgUiFormPanelState extends State<AgUiFormPanel> {
           mainAxisSize: MainAxisSize.min,
           children: [
             Text(_request.title,
-                style: theme.titleStyle ??
+                style: theme.formTitleStyle ??
                     Theme.of(context).textTheme.titleMedium),
             if (_request.description != null) ...[
-              const SizedBox(height: 6),
+              SizedBox(height: theme.gap6),
               Text(_request.description!,
-                  style: theme.descriptionStyle ??
+                  style: theme.formDescriptionStyle ??
                       Theme.of(context).textTheme.bodyMedium),
             ],
             if (_request.fields.isNotEmpty) ...[
-              const SizedBox(height: 16),
+              SizedBox(height: theme.gap16),
               ..._request.fields.map((field) {
                 if (widget.fieldBuilder != null) {
                   return widget.fieldBuilder!(
@@ -116,17 +119,17 @@ class _AgUiFormPanelState extends State<AgUiFormPanel> {
                 return _FieldWidget(
                   field: field,
                   value: _values[field.name],
-                  labelStyle: theme.fieldLabelStyle,
+                  labelStyle: theme.formFieldLabelStyle,
                   onChanged: (v) => setState(() => _values[field.name] = v),
                 );
               }),
             ],
             if (_error != null) ...[
-              const SizedBox(height: 8),
+              SizedBox(height: theme.gap8),
               Text(_error!,
                   style: TextStyle(color: colorScheme.error, fontSize: 12)),
             ],
-            const SizedBox(height: 16),
+            SizedBox(height: theme.gap16),
             widget.actionsBuilder?.call(_request, _act) ??
                 _DefaultActions(
                   request: _request,
@@ -265,7 +268,7 @@ class _DefaultActions extends StatelessWidget {
 
   final FormRequest request;
   final bool submitting;
-  final AgUiFormTheme theme;
+  final AgThemeData theme;
   final void Function(FormOutcome) onAct;
 
   @override
@@ -281,15 +284,15 @@ class _DefaultActions extends StatelessWidget {
             OutlinedButton(
               style: OutlinedButton.styleFrom(
                   foregroundColor:
-                      theme.rejectColor ?? colorScheme.error),
+                      theme.formRejectColor ?? colorScheme.error),
               onPressed: () => onAct(FormOutcome.rejected),
               child: const Text('Reject'),
             ),
-            const SizedBox(width: 8),
+            SizedBox(width: theme.gap8),
             FilledButton(
               style: FilledButton.styleFrom(
                   backgroundColor:
-                      theme.approveColor ?? colorScheme.primary),
+                      theme.formApproveColor ?? colorScheme.primary),
               onPressed: () => onAct(FormOutcome.approved),
               child: const Text('Approve'),
             ),
@@ -306,7 +309,7 @@ class _DefaultActions extends StatelessWidget {
           alignment: Alignment.centerRight,
           child: FilledButton(
             style: FilledButton.styleFrom(
-                backgroundColor: theme.submitColor ?? colorScheme.primary),
+                backgroundColor: theme.formSubmitColor ?? colorScheme.primary),
             onPressed: () => onAct(FormOutcome.submitted),
             child: const Text('Submit'),
           ),

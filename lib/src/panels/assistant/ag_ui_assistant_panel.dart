@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
+import '../../theme/ag_theme_data.dart';
 import '../../widgets/ag_ui_markdown_body.dart';
 import 'assistant_controller.dart';
 import 'assistant_models.dart';
-import 'assistant_theme.dart';
 
 /// A self-contained AI assistant chat panel backed by [AssistantController].
 ///
-/// Styling: add [AgUiAssistantTheme] to [ThemeData.extensions], or pass
+/// Styling: add [AgThemeData] to [ThemeData.extensions], or pass
 /// [style] for a per-widget override. Override individual parts with builders.
 class AgUiAssistantPanel extends StatefulWidget {
   const AgUiAssistantPanel({
@@ -25,8 +25,8 @@ class AgUiAssistantPanel extends StatefulWidget {
 
   final AssistantController controller;
 
-  /// Visual overrides on top of [AgUiAssistantTheme].
-  final AgUiAssistantTheme? style;
+  /// Visual overrides on top of [AgThemeData].
+  final AgThemeData? style;
 
   /// Replace the default message bubble entirely.
   final Widget Function(AssistantMessage message)? messageBuilder;
@@ -111,18 +111,19 @@ class _AgUiAssistantPanelState extends State<AgUiAssistantPanel> {
 
   @override
   Widget build(BuildContext context) {
-    final theme = AgUiAssistantTheme.of(context).copyWith(
-      userBubbleColor: widget.style?.userBubbleColor,
-      assistantBubbleColor: widget.style?.assistantBubbleColor,
-      systemBubbleColor: widget.style?.systemBubbleColor,
-      userTextStyle: widget.style?.userTextStyle,
-      assistantTextStyle: widget.style?.assistantTextStyle,
-      bubbleRadius: widget.style?.bubbleRadius,
-      inputDecoration: widget.style?.inputDecoration,
-      sendIconColor: widget.style?.sendIconColor,
-      typingIndicatorColor: widget.style?.typingIndicatorColor,
-      onlineColor: widget.style?.onlineColor,
-      offlineColor: widget.style?.offlineColor,
+    final s = widget.style;
+    final theme = AgThemeData.of(context).copyWith(
+      bubbleUserColor:       s?.bubbleUserColor,
+      bubbleAgentColor:      s?.bubbleAgentColor,
+      bubbleSystemColor:     s?.bubbleSystemColor,
+      bubbleUserTextStyle:   s?.bubbleUserTextStyle,
+      bubbleAgentTextStyle:  s?.bubbleAgentTextStyle,
+      bubbleRadius:          s?.bubbleRadius,
+      inputDecoration:       s?.inputDecoration,
+      sendIconColor:         s?.sendIconColor,
+      typingIndicatorColor:  s?.typingIndicatorColor,
+      onlineColor:           s?.onlineColor,
+      offlineColor:          s?.offlineColor,
     );
 
     final ctrl = widget.controller;
@@ -173,7 +174,7 @@ class _StatusBar extends StatelessWidget {
   const _StatusBar({required this.controller, required this.theme});
 
   final AssistantController controller;
-  final AgUiAssistantTheme theme;
+  final AgThemeData theme;
 
   @override
   Widget build(BuildContext context) {
@@ -229,7 +230,7 @@ class _AssistantBubble extends StatelessWidget {
   const _AssistantBubble({required this.message, required this.theme});
 
   final AssistantMessage message;
-  final AgUiAssistantTheme theme;
+  final AgThemeData theme;
 
   @override
   Widget build(BuildContext context) {
@@ -238,22 +239,23 @@ class _AssistantBubble extends StatelessWidget {
     final isSystem = message.role == AssistantRole.system;
 
     final Color bg = isUser
-        ? (theme.userBubbleColor ?? colorScheme.primaryContainer)
+        ? (theme.bubbleUserColor ?? colorScheme.primaryContainer)
         : isSystem
-            ? (theme.systemBubbleColor ?? colorScheme.surfaceContainerHighest)
-            : (theme.assistantBubbleColor ?? colorScheme.secondaryContainer);
+            ? (theme.bubbleSystemColor ?? colorScheme.surfaceContainerHighest)
+            : (theme.bubbleAgentColor ?? colorScheme.secondaryContainer);
 
     final TextStyle? textStyle =
-        isUser ? theme.userTextStyle : theme.assistantTextStyle;
+        isUser ? theme.bubbleUserTextStyle : theme.bubbleAgentTextStyle;
 
-    final radius = theme.bubbleRadius ?? BorderRadius.circular(12);
+    final radius = BorderRadius.circular(theme.bubbleRadius);
 
     if (isSystem) {
       return Padding(
-        padding: const EdgeInsets.symmetric(vertical: 4),
+        padding: EdgeInsets.symmetric(vertical: theme.gap4),
         child: Center(
           child: Container(
-            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+            padding: EdgeInsets.symmetric(
+                horizontal: theme.gap12, vertical: theme.gap6),
             decoration: BoxDecoration(color: bg, borderRadius: radius),
             child: Text(message.content,
                 style: textStyle ??
@@ -272,8 +274,9 @@ class _AssistantBubble extends StatelessWidget {
     return Align(
       alignment: isUser ? Alignment.centerRight : Alignment.centerLeft,
       child: Container(
-        margin: const EdgeInsets.symmetric(vertical: 4),
-        padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 10),
+        margin: EdgeInsets.symmetric(vertical: theme.gap4),
+        padding: EdgeInsets.symmetric(
+            horizontal: theme.bubblePaddingH, vertical: theme.bubblePaddingV),
         constraints:
             BoxConstraints(maxWidth: MediaQuery.of(context).size.width * 0.75),
         decoration: BoxDecoration(color: bg, borderRadius: radius),
