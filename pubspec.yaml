@@ -2,7 +2,7 @@
 description: >-
   Flutter package for AI agent UIs â€” AG-UI protocol, SSE streaming, chat panel,
   HIL forms, AI assistant, and agent run monitor. Bring your own backend.
-version: 0.3.11
+version: 0.3.12
 repository: https://github.com/agentivity-labs/agentivity_ag_ui
 homepage: https://labs.agentivity.io/agentivity_ag_ui/
 issue_tracker: https://github.com/agentivity-labs/agentivity_ag_ui/issues
