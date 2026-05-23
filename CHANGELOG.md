@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.3.8
+
+**Improved theming.**
+
+- Improve the theming to make it more application to the whole application.
+
 ## 0.3.6
 
 **Clean versioning release — correct tag/pubspec alignment.**
