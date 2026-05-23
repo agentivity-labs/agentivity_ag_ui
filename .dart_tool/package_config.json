@@ -215,7 +215,7 @@
       "name": "agentivity_ag_ui",
       "rootUri": "../",
       "packageUri": "lib/",
-      "languageVersion": "3.2"
+      "languageVersion": "3.7"
     }
   ],
   "generator": "pub",

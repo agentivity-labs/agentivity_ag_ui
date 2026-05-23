@@ -11,6 +11,8 @@ Ship real-time AI chat, human-in-the-loop approvals, generative UI, and agent mo
 
 **[🛍️ Shopping demo](https://labs.agentivity.io/agentivity_ag_ui/example_shopping/) &nbsp;·&nbsp; [🤖 Agentivity client](https://labs.agentivity.io/agentivity_ag_ui/example_agentivity/) &nbsp;·&nbsp; [📖 Step-by-step](https://labs.agentivity.io/agentivity_ag_ui/example/)**
 
+[![agentivity_ag_ui screenshot](https://github.com/agentivity-labs/agentivity_ag_ui/blob/master/doc/screenshots/widgets_light.png?raw=true)](https://labs.agentivity.io/agentivity_ag_ui/)
+
 ---
 
 ## The problem
